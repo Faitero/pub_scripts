@@ -23,10 +23,6 @@ ggplot() + aes(read_len)+ geom_histogram(binwidth=2, colour="grey", fill="grey")
   labs(x="Read lenght", y="Frequency")+
   xlim(c(0, 200)) +
   annotate("text", label = paste("Reads with L3 adapter: ", count, sep="") , x = 30, hjust = 0, y = Inf, vjust = 2, color = "darkred") 
-  #annotate("text", label = count , x = 100, hjust = 0, y = Inf, vjust = 2, color = "darkred")
-
 
 ggsave(plot_name)
 
-# annotate("text", label = "Total:" , x = 0, hjust = 0, y = Inf, vjust = 2, color = "darkred") +
-#   annotate("text", label = total , x = 15, hjust = 0, y = Inf, vjust = 2, color = "darkred")
