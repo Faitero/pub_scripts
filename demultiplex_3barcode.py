@@ -45,7 +45,7 @@ Transformed downstream      NNNNAAAAATGCNNNNN....SEQUENCE..............3ILLUMINA
 
 2. Demultiplex based on the 5' barcode:
 
-    - Output:               demultiplexed_5barcode_{name}.fq                            
+    - Output:               demultiplexed_5barcode_{name}.fq
                             5barcode_not_found.fastq.gz
 
 3. Demultiplex based on the 3'barcode and intercalate in between the 5'barcode
@@ -83,17 +83,11 @@ sys.setdefaultencoding('utf8')
 
 
 ## Module loads to use on CAMP
-# Module loads cutadapt program
-cmd = ("ml cutadapt/1.9.1-foss-2016b-Python-2.7.12")
-subprocess.call(cmd, shell=True)
-# cmd=("ml Python/2.7.12-intel-2016b")
-# subprocess.call(cmd, shell=True)
-cmd = ("ml use /camp/apps/eb/dev/modules/all")
-subprocess.call(cmd, shell=True)
-cmd = ("ml Python/2.7.12-foss-2016b")
-subprocess.call(cmd, shell=True)
-cmd = ("ml R-bundle-cnvkit/0.2-foss-2016b-R-foss-2016b-3.3.1-bioc-3.3-libX11-1.6.3")
-subprocess.call(cmd, shell=True)
+print os.system("ml cutadapt/1.9.1-foss-2016b-Python-2.7.12")
+# print os.system("ml Python/2.7.12-intel-2016b")
+print os.system("ml use /camp/apps/eb/dev/modules/all")
+print os.system("ml Python/2.7.12-foss-2016b")
+print os.system("ml R-bundle-cnvkit/0.2-foss-2016b-R-foss-2016b-3.3.1-bioc-3.3-libX11-1.6.3")
 
 from openpyxl import load_workbook
 from openpyxl import Workbook
