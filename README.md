@@ -19,16 +19,16 @@ demultiplex_3barcode.py needs "Make_histogram.R" Rscript to be present on the sa
 
 ## Info:
 
-> Adapters
+### Adapters
 5'barcode                   NNNNAAAAANNN
 3'Illumina adapter                                                     3ILLUMINAADAPTER
 3'barcode                                                         NNTGC
 
-> Reads
+### Reads
 Normal read                 NNNNAAAAANNN.........SEQUENCE..............3ILLUMINAADAPTER
 New 3'barcode read          NNNNAAAAANNN.........SEQUENCE.........NNTGC3ILLUMINAADAPTER
 
-> Output reads
+### Output reads
 Transformed upstream        NNNNNNTGCAAAAANNN....SEQUENCE..............3ILLUMINAADAPTER
 Transformed downstream      NNNNAAAAATGCNNNNN....SEQUENCE..............3ILLUMINAADAPTER
 
