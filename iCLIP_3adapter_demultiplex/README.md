@@ -39,32 +39,33 @@ Transformed downstream      NNNNAAAAATGCNNNNN....SEQUENCE..............3ILLUMINA
 
 1. Remove the 3' Illumina adapter:
 
-    - Output:               Illumina_adapter3_removed.fq.gz                             Reads removing the 3' Illumina adapter
-                                            _unknown.fq.gz                              Reads where 3' Illumina adapter can't be found
+    - Output:       Illumina_adapter3_removed.fq.gz                                     Reads removing the 3' Illumina adapter
+                    Illumina_unknown_removed.fq.gz                                      Reads where 3' Illumina adapter can't be found
 
 2. Demultiplex based on the 5' barcode:
 
-    - Output:               demultiplexed_5barcode_{name}.fq
-                            5barcode_not_found.fastq.gz
+    - Output:       demultiplexed_5barcode_{5'barcode_name}.fq                          Reads 5'barcode demultiplexed
+                    5barcode_not_found.fastq.gz                                         Reads where 5'barcode can't be found
 
-3. Demultiplex based on the 3'barcode and intercalate in between the 5'barcode
 
-     - Output:              demultiplexed_5barcode_{name}_Illumina_3adapter_added.fq
+3. Demultiplex based on the 3'barcode and intercalate in between the 5'barcode and add a syntetic 3' Illumina adapter:
 
-                            demultiplexed_5barcode_{name}_demultiplexed_3barcode_{name}_Illumina_3adapter_added.fq
+    - Output:        demultiplexed_5barcode_{5'barcode_name}_Illumina_3adapter_added.fq 
 
-                            fastqfilename_cutadapt_Logfile.txt                          Cutadapt Log of demultiplex and extraction
+                     demultiplexed_5barcode_{5'barcode_name}_demultiplexed_3barcode_{3'barcodes_name}_Illumina_3adapter_added.fq
+
+                     fastqfilename_cutadapt_Logfile.txt                                  Cutadapt Log of demultiplex and extraction
 
 4. Create histograms of read length
 
-     - Output:              Histogram{5'barcode_name}.pdf                               Histograms of read lengths containing 3'barcodes
+    - Output:       Histogram{5'barcode_name}.pdf                                       Histograms of read lengths containing 3'barcodes
 
 5. Remove intermediate files and merge the final file:
 
-    - Output:               L3modified_merged_{name_original_fastq_file}.fq.gz          Final 3barcode demultiplexed and merged all the intermediate files
+    - Output:         L3modified_merged_{name_original_fastq_file}.fq.gz                 Final 3barcode demultiplexed and merged all the intermediate files
 
 6. Modified sample_annotation file:
 
-    - Output:               L3modified_{name_original_excel_file}.xlsx                  Final annotation file where 3'barcode have been intercalated in between the 5'barcode
+    - Output:         L3modified_{name_original_excel_file}.xlsx                         Final annotation file where 3'barcode have been intercalated in between the 5'barcode
 
 </pre>

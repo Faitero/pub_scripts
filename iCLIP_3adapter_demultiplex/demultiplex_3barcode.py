@@ -41,7 +41,7 @@ Transformed downstream      NNNNAAAAATGCNNNNN....SEQUENCE..............3ILLUMINA
 1. Remove the 3' Illumina adapter:
 
     - Output:               Illumina_adapter3_removed.fq.gz                             Reads removing the 3' Illumina adapter
-                                            _unknown.fq.gz                              Reads where 3' Illumina adapter can't be found
+                            Illumina_unknown_removed.fq.gz                              Reads where 3' Illumina adapter can't be found
 
 2. Demultiplex based on the 5' barcode:
 
@@ -574,7 +574,7 @@ def merge_and_remove(remove_intermediates_files, fastq_file_path):
 
     if remove_intermediates_files == "yes":
         # Remove all the intermediate files
-        print os.system("rm -r demultiplexed_5barcode_* 5barcode_not_found.fastq.gz Illumina_adapter3_removed.fq.gz adapter5.fasta Rplots.pdf")
+        print os.system("rm -r demultiplexed_5barcode_* 5barcode_not_found.fastq.gz Illumina_adapter3_removed.fq.gz Illumina_unknown_removed.fq.gz adapter5.fasta Rplots.pdf")
 
     elif remove_intermediates_files == "no":
         print("Not removing any intermediate files")
