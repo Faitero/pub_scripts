@@ -1,6 +1,6 @@
 # iCLIP 3'barcode demultiplex
 
-Script process and demultiplex the raw fastq file inserting the 3'barcode in between the 5' barcode.
+Script process and demultiplex the raw fastq file inserting the 3'barcode in between the 5' barcode. Test files are synthetic fastq file (merge_my_script.fq.gz) and accompanying anotation (synthetic_reads_my_script.xlsx). 
 
 ## Main call:
 
@@ -15,7 +15,9 @@ Script process and demultiplex the raw fastq file inserting the 3'barcode in bet
 
 ## Requirement:
 
-demultiplex_3barcode.py needs "Make_histogram.R" Rscript to be present on the same folder of main script
+- demultiplex_3barcode.py needs "Make_histogram.R" Rscript to be present on the same folder of main script.
+- Cutadapt executable should be on the path.
+
 
 ## Info:
 <pre>
@@ -54,18 +56,18 @@ Transformed downstream      NNNNAAAAATGCNNNNN....SEQUENCE..............3ILLUMINA
 
                      demultiplexed_5barcode_{5'barcode_name}_demultiplexed_3barcode_{3'barcodes_name}_Illumina_3adapter_added.fq
 
-                     fastqfilename_cutadapt_Logfile.txt                                  Cutadapt Log of demultiplex and extraction
+                     fastqfilename_cutadapt_Logfile.txt                                 Cutadapt Log of demultiplex and extraction
 
 4. Create histograms of read length
 
-    - Output:       Histogram{5'barcode_name}.pdf                                       Histograms of read lengths containing 3'barcodes
+    - Output:        Histogram{5'barcode_name}.pdf                                      Histograms of read lengths containing 3'barcodes
 
 5. Remove intermediate files and merge the final file:
 
-    - Output:         L3modified_merged_{name_original_fastq_file}.fq.gz                 Final 3barcode demultiplexed and merged all the intermediate files
+    - Output:        L3modified_merged_{name_original_fastq_file}.fq.gz                 Final 3barcode demultiplexed and merged all the intermediate files
 
 6. Modified sample_annotation file:
 
-    - Output:         L3modified_{name_original_excel_file}.xlsx                         Final annotation file where 3'barcode have been intercalated in between the 5'barcode
+    - Output:        L3modified_{name_original_excel_file}.xlsx                         Final annotation file where 3'barcode have been intercalated in between the 5'barcode
 
 </pre>
