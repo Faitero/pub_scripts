@@ -14,6 +14,12 @@
 #SBATCH --mail-type=END,FAIL # notifications for job done & fail
 #SBATCH --mail-user=i.mozos@ucl.ac.uk # send-to address
 
+# Modules Load
+ml cutadapt/1.9.1-foss-2016b-Python-2.7.12 
+ml use /camp/apps/eb/dev/modules/all
+ml Python/2.7.12-foss-2016b
+ml R-bundle-cnvkit/0.2-foss-2016b-R-foss-2016b-3.3.1-bioc-3.3-libX11-1.6.3
+
 
 # Demultiplex run
 python demultiplex_3barcode_options.py /camp/lab/ulej/inputs/babs/martina.hallegger/robert.goldstone/PM18225/181108_D00446_0277_ACBT6YANXX/fastq/HAL169A1-A22_S1_L008_R1_001.fastq.gz iclip_annotation_PM18225_20181001_JU.xlsx
