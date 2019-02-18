@@ -633,7 +633,7 @@ def merge_and_remove(remove_intermediates_files, fastq_file_path):
 
     if remove_intermediates_files == "yes":
         # Remove all the intermediate files
-        print os.system("rm -r demultiplexed_5barcode_* 5barcode_not_found.fastq.gz Illumina_adapter3_removed.fq.gz adapter5.fasta Rplots.pdf")
+        print os.system("rm -r demultiplexed_5barcode_* 5barcode_not_found.fastq.gz Illumina_adapter3_removed.fq.gz adapter5.fasta Rplots.pdf *_3barcode_repositioned.fq")
 
     elif remove_intermediates_files == "no":
         print("Not removing any intermediate files")

@@ -562,6 +562,8 @@ def merge_and_remove(remove_intermediates_files, fastq_file_path):
     If argument remove_intermediates_files is "no" the intermediate files will not be removed.
     '''
 
+    print "Merging and removing intermediate files"
+
     # Rename output fastq file
     fastq_file_name = os.path.basename(fastq_file_path)
     renamed_fastq_file_name = ("L3modified_merged_%s" % fastq_file_name)
